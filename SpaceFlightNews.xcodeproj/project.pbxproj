@@ -13,6 +13,11 @@
 		38275E5F2A12A755006AADEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38275E5D2A12A755006AADEC /* Main.storyboard */; };
 		38275E612A12A757006AADEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38275E602A12A757006AADEC /* Assets.xcassets */; };
 		38275E642A12A757006AADEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38275E622A12A757006AADEC /* LaunchScreen.storyboard */; };
+		38275E6E2A12A855006AADEC /* SpaceServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38275E6D2A12A855006AADEC /* SpaceServices.swift */; };
+		38275E712A12A865006AADEC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38275E702A12A865006AADEC /* Response.swift */; };
+		38275E732A12AC37006AADEC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38275E722A12AC37006AADEC /* HomeViewController.swift */; };
+		38275E752A12AC5F006AADEC /* NewsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38275E742A12AC5F006AADEC /* NewsViewCell.swift */; };
+		D84D0E1747AC4C1647B1C090 /* Pods_SpaceFlightNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD35368F4BFDA4103638988C /* Pods_SpaceFlightNews.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,13 @@
 		38275E602A12A757006AADEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38275E632A12A757006AADEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38275E652A12A757006AADEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38275E6D2A12A855006AADEC /* SpaceServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceServices.swift; sourceTree = "<group>"; };
+		38275E702A12A865006AADEC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		38275E722A12AC37006AADEC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		38275E742A12AC5F006AADEC /* NewsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewCell.swift; sourceTree = "<group>"; };
+		69F0C7CD4AF46F29434E6C00 /* Pods-SpaceFlightNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceFlightNews.release.xcconfig"; path = "Target Support Files/Pods-SpaceFlightNews/Pods-SpaceFlightNews.release.xcconfig"; sourceTree = "<group>"; };
+		CD35368F4BFDA4103638988C /* Pods_SpaceFlightNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpaceFlightNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD26078BD97EF7BBD4A4B036 /* Pods-SpaceFlightNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpaceFlightNews.debug.xcconfig"; path = "Target Support Files/Pods-SpaceFlightNews/Pods-SpaceFlightNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D84D0E1747AC4C1647B1C090 /* Pods_SpaceFlightNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A4258DCECE8899556901304 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FD26078BD97EF7BBD4A4B036 /* Pods-SpaceFlightNews.debug.xcconfig */,
+				69F0C7CD4AF46F29434E6C00 /* Pods-SpaceFlightNews.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		38275E4B2A12A755006AADEC = {
 			isa = PBXGroup;
 			children = (
 				38275E562A12A755006AADEC /* SpaceFlightNews */,
 				38275E552A12A755006AADEC /* Products */,
+				0A4258DCECE8899556901304 /* Pods */,
+				D55A2FB391BA756D270D781D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +80,9 @@
 		38275E562A12A755006AADEC /* SpaceFlightNews */ = {
 			isa = PBXGroup;
 			children = (
+				38275E6F2A12A85A006AADEC /* Models */,
+				38275E6C2A12A83F006AADEC /* Controllers */,
+				38275E6B2A12A83A006AADEC /* Services */,
 				38275E572A12A755006AADEC /* AppDelegate.swift */,
 				38275E592A12A755006AADEC /* SceneDelegate.swift */,
 				38275E5B2A12A755006AADEC /* ViewController.swift */,
@@ -67,6 +94,39 @@
 			path = SpaceFlightNews;
 			sourceTree = "<group>";
 		};
+		38275E6B2A12A83A006AADEC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				38275E6D2A12A855006AADEC /* SpaceServices.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		38275E6C2A12A83F006AADEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38275E722A12AC37006AADEC /* HomeViewController.swift */,
+				38275E742A12AC5F006AADEC /* NewsViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		38275E6F2A12A85A006AADEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38275E702A12A865006AADEC /* Response.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D55A2FB391BA756D270D781D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD35368F4BFDA4103638988C /* Pods_SpaceFlightNews.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38275E682A12A757006AADEC /* Build configuration list for PBXNativeTarget "SpaceFlightNews" */;
 			buildPhases = (
+				D3F4DC096A772D83B46A7CB2 /* [CP] Check Pods Manifest.lock */,
 				38275E502A12A755006AADEC /* Sources */,
 				38275E512A12A755006AADEC /* Frameworks */,
 				38275E522A12A755006AADEC /* Resources */,
+				EECD646F60E2E0CF5316563E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +195,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D3F4DC096A772D83B46A7CB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SpaceFlightNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EECD646F60E2E0CF5316563E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpaceFlightNews/Pods-SpaceFlightNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpaceFlightNews/Pods-SpaceFlightNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpaceFlightNews/Pods-SpaceFlightNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38275E502A12A755006AADEC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +244,11 @@
 			files = (
 				38275E5C2A12A755006AADEC /* ViewController.swift in Sources */,
 				38275E582A12A755006AADEC /* AppDelegate.swift in Sources */,
+				38275E6E2A12A855006AADEC /* SpaceServices.swift in Sources */,
 				38275E5A2A12A755006AADEC /* SceneDelegate.swift in Sources */,
+				38275E752A12AC5F006AADEC /* NewsViewCell.swift in Sources */,
+				38275E712A12A865006AADEC /* Response.swift in Sources */,
+				38275E732A12AC37006AADEC /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,6 +392,7 @@
 		};
 		38275E692A12A757006AADEC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD26078BD97EF7BBD4A4B036 /* Pods-SpaceFlightNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -305,12 +414,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		38275E6A2A12A757006AADEC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69F0C7CD4AF46F29434E6C00 /* Pods-SpaceFlightNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -332,7 +442,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
