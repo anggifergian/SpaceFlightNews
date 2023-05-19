@@ -7,6 +7,7 @@
 
 import UIKit
 import SDWebImage
+import SafariServices
 
 class HomeViewController: UIViewController {
 
@@ -37,6 +38,7 @@ class HomeViewController: UIViewController {
 
 }
 
+// MARK: - UITableDataSource
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return readingList.count
@@ -49,6 +51,7 @@ extension HomeViewController: UITableViewDataSource {
         
         cell.headingLbl.text        = item.title
         cell.descriptionLbl.text    = item.summary
+        cell.delegate               = self
         
         if let url = URL(string: item.imageUrl) {
             cell.thumbImage.sd_setImage(with: url)
@@ -58,5 +61,26 @@ extension HomeViewController: UITableViewDataSource {
         
         
         return cell
+    }
+}
+
+// MARK: - UITableDelegate
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        newsTableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+// MARK: - NewsViewCellDelegate
+extension HomeViewController: NewsViewCellDelegate {
+    func NewsViewCellVisitTapped(_ cell: NewsViewCell) {
+        if let indexPath = newsTableView.indexPath(for: cell) {
+            let news = readingList[indexPath.row]
+            
+            if let url = URL(string: news.url) {
+                let controller = SFSafariViewController(url: url)
+                present(controller, animated: true)
+            }
+        }
     }
 }
